@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: coral;
+    height: 60px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: royalblue;
+    flex-grow: 1;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 50%;
+}
+
+.related-cards {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    border: 2px dotted red;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 140px;
+    border: 1px solid yellow;
+    margin: 10px;
+}
+
+.pricing  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+    /* flex-grow: 1; */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: tomato;
+    /* flex-grow: 1; */
+}
+
+
+
+

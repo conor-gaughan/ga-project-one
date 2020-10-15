@@ -20,6 +20,8 @@ const exchange = document.querySelector('.exchange')
 const url = document.querySelector('.company-url')
 const image = document.querySelector('.logo')
 const industry = document.querySelector('.industry')
+const widget = document.querySelector('script[type="text/javascript"]')
+console.log(widget)
 
  
 
@@ -68,3 +70,14 @@ function render() {
 
 
 // Have the entire table in a map function to display on page. do in index html first and style
+
+/*
+
+Things to potentially add:
+Navigation bar to include news and other links
+- Peers - similar stocks to the company
+- Pricing in Table 
+- See if there's a way to add a widget https://finnhub.io/docs/api#crypto-candles
+- Light mode and dark mode
+
+*/

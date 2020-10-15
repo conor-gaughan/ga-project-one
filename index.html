@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,22 @@
     <script defer src="./js/script.js"></script>
     <title>Stock App</title>
 </head>
+
 <body>
+    <!-- <header>
+        <nav>
+            <div class="news">News</div>
+            <div class="news">News</div>
+            <div class="news">News</div>
+        </nav>
+    </header> -->
     <header>
-        <h1>Stock App</h1>
-    </header>
-    <main>
         <form>
             <input type="text" placeholder="Search Company">
             <input type="submit" value="Search">
-        </form> 
+        </form>
+    </header>
+    <main>
         <section class="company-info">
             <img src="" alt="" class="logo">
             <p class="name">Name</p>
@@ -23,8 +31,95 @@
             <p class="exchange">Exchange</p>
             <a href="" target="_blank" class="company-url">Company Website</a>
             <p class="industry">Industry</p>
+            </section>
+
+  
+        <section class="related-cards">
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
+            <article class="card">
+                <h3>Company Name</h3>
+            </article>
         </section>
     </main>
-    <footer></footer> 
+    <section class="pricing">
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alvin</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>Footer</footer>
 </body>
+
 </html>
+
+<!-- <div class="tradingview-widget-container">
+    <div id="tradingview_b1c64"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+    new TradingView.widget(
+    {
+    "width": 980,
+    "height": 610,
+    "symbol": "NASDAQ:TSLA",
+    "interval": "D",
+    "timezone": "Etc/UTC",
+    "theme": "light",
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "allow_symbol_change": true,
+    "container_id": "tradingview_b1c64"
+  }
+    );
+    </script>
+  </div> -->
