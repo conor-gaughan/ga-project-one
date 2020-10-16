@@ -24,24 +24,14 @@ const widget = document.querySelector('script[type="text/javascript"]')
 const cards = document.querySelector('.related-cards')
 
 
- 
-
-
-
-
 // EVENT LISTENERS
 
 formEl.addEventListener('submit', handleGetData)
-formEl.addEventListener('submit', cardData)
+// formEl.addEventListener('submit', cardData)
 
 
 
 // FUNCTIONS
-
-
-
-
-
 
 
 function handleGetData(e) {
@@ -53,14 +43,13 @@ function handleGetData(e) {
         companyInfo = data
         console.log(data)
         cardData()
+        tableData()
         render()
     })
     .catch(function() {
         console.log('error message')
     })
 }
-
-
 
 function cardData() {
     fetch(`https://finnhub.io/api/v1/stock/peers?symbol=${userInput}&token=bu3p71v48v6up0bi1v20`)
@@ -72,10 +61,20 @@ function cardData() {
         })
 }
 
+function tableData() {
+    fetch(`https://finnhub.io/api/v1/stock/metric?symbol=${userInput}&metric=all&token=bu3p71v48v6up0bi1v20`)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        // console.log(data)
+        render()
+        })
+}
+
 function generateUI() {
     return peers.map(function(company) {
         // console.log('COMPANY', company)
-        return `<article class="card">
+        return `
+        <article class="card">
         <h3>${company}</h3>
     </article>`
     })
@@ -91,7 +90,7 @@ function render() {
     image.setAttribute('src', companyInfo.logo)
     cards.innerHTML = generateUI().join('')
 }
-// generateUI()
+
 
 
 
