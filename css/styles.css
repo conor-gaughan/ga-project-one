@@ -52,6 +52,7 @@ main {
     width: 140px;
     border: 1px solid yellow;
     margin: 10px;
+    background-color: pink;
 }
 
 .pricing  {

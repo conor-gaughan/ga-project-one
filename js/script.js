@@ -51,6 +51,7 @@ function handleGetData(e) {
     .then((resp) => resp.json())
     .then(function(data) {
         companyInfo = data
+        console.log(data)
         cardData()
         render()
     })
@@ -67,24 +68,28 @@ function cardData() {
     .then(function(data) {
         peers = data
         // console.log(data)
+        render()
         })
 }
 
 function generateUI() {
     return peers.map(function(company) {
-        console.log('COMPANY', company)
+        // console.log('COMPANY', company)
+        return `<article class="card">
+        <h3>${company}</h3>
+    </article>`
     })
 
 }
 
 function render() {
-    title.textContent = `Company Name: ${companyInfo.name}`;
+    title.textContent = companyInfo.name;
     ticker.textContent = companyInfo.ticker;
     exchange.textContent = companyInfo.exchange;
     url.setAttribute('href', `${companyInfo.weburl}`);
     industry.textContent = companyInfo.finnhubIndustry;
     image.setAttribute('src', companyInfo.logo)
-    cards.innerHTML = generateUI()
+    cards.innerHTML = generateUI().join('')
 }
 // generateUI()
 
