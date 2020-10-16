@@ -21,7 +21,8 @@ const url = document.querySelector('.company-url')
 const image = document.querySelector('.logo')
 const industry = document.querySelector('.industry')
 const widget = document.querySelector('script[type="text/javascript"]')
-console.log(widget)
+const cards = document.querySelector('.related-cards')
+
 
  
 
@@ -31,6 +32,7 @@ console.log(widget)
 // EVENT LISTENERS
 
 formEl.addEventListener('submit', handleGetData)
+formEl.addEventListener('submit', cardData)
 
 
 
@@ -49,12 +51,30 @@ function handleGetData(e) {
     .then((resp) => resp.json())
     .then(function(data) {
         companyInfo = data
+        cardData()
         render()
-  
     })
     .catch(function() {
         console.log('error message')
     })
+}
+
+
+
+function cardData() {
+    fetch(`https://finnhub.io/api/v1/stock/peers?symbol=${userInput}&token=bu3p71v48v6up0bi1v20`)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        peers = data
+        // console.log(data)
+        })
+}
+
+function generateUI() {
+    return peers.map(function(company) {
+        console.log('COMPANY', company)
+    })
+
 }
 
 function render() {
@@ -64,20 +84,19 @@ function render() {
     url.setAttribute('href', `${companyInfo.weburl}`);
     industry.textContent = companyInfo.finnhubIndustry;
     image.setAttribute('src', companyInfo.logo)
+    cards.innerHTML = generateUI()
 }
+// generateUI()
 
 
 
 
 // Have the entire table in a map function to display on page. do in index html first and style
-
 /*
-
 Things to potentially add:
 Navigation bar to include news and other links
 - Peers - similar stocks to the company
 - Pricing in Table 
 - See if there's a way to add a widget https://finnhub.io/docs/api#crypto-candles
 - Light mode and dark mode
-
 */
