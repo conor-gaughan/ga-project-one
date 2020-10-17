@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- MINE -->
     <script defer src="./js/script.js"></script>
     <title>Stock App</title>
 </head>
@@ -19,34 +25,52 @@
     </header> -->
     <header>
         <form>
+            <i class="fas fa-search-dollar"></i>
             <input type="text" placeholder="Search Company">
+            <button>
+                SEARCH
+                <i class="fas fa-search-dollar"></i>
+            </button>
             <input type="submit" value="Search">
         </form>
     </header>
     <main>
         <section class="company-info">
+            <h3>Company Info</h3>
             <img src="" alt="" class="logo">
-            <p class="name">Name</p>
-            <p class="ticker">Ticker</p>
-            <p class="exchange">Exchange</p>
-            <a href="" target="_blank" class="company-url">Company Website</a>
-            <p class="industry">Industry</p>
-            </section>
+            <p class="name"></p>
+            <p class="ticker"></p>
+            <p class="exchange"></p>
+            <a href="" target="_blank" class="company-url"></a>
+            <p class="industry"></p>
+        </section>
 
-  
+        <section class="pricing">
+            <h3>Pricing Information</h3>
+            <p class="current"></p>
+            <p class="high"></p>
+            <p class="low"></p>
+            <p class="open"></p>
+            <p class="previous-close"></p>
+        </section>
+
+
         <section class="related-cards">
+            <h3>Similar Companies</h3>
             <!-- GENERATING IN SCRIPT.JS -->
+            <div></div>
         </section>
     </main>
-    <section class="pricing">
+    <section class="info-table">
         <table>
             <thead>
                 <tr>
-                    <th>Stock</th>
                     <th>Name</th>
-                    <th>Stock</th>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>Alvin</td>
