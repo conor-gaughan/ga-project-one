@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- MINE -->
     <script defer src="./js/script.js"></script>
     <title>Stock App</title>
 </head>
+
 <body>
-    
+    <div class="container">
+    <!-- <header>
+        <nav>
+            <div class="news">News</div>
+            <div class="news">News</div>
+            <div class="news">News</div>
+        </nav>
+    </header> -->
+    <header>
+        <form>
+            <input type="text" placeholder="Search Company">
+            <button>
+                SEARCH
+                <!-- <i class="fas fa-search-dollar"></i> -->
+            </button>
+            <!-- <input type="submit" value="Search"> -->
+        </form>
+        <div class="dark-mode-toggler">
+            <input type="checkbox" id="toggler" aria-label="Toggler for dark mode">
+            <label for="toggler">Toggler</label>
+        </div>
+    </header>
+    <main>
+        <section class="company-info">
+            <h3>Company Info</h3>
+            <img src="" alt="" class="logo">
+            <p class="name"></p>
+            <p class="ticker"></p>
+            <p class="exchange"></p>
+            <a href="" target="_blank" class="company-url"></a>
+            <p class="industry"></p>
+        </section>
+
+        <section class="pricing">
+            <h3>Pricing Information</h3>
+            <p class="current"></p>
+            <p class="high"></p>
+            <p class="low"></p>
+            <p class="open"></p>
+            <p class="previous-close"></p>
+        </section>
+
+
+        <section class="related-cards">
+            <h3>Similar Companies</h3>
+            <!-- GENERATING IN SCRIPT.JS -->
+            <div class="card-content"></div>
+        </section>
+    </main>
+    <!-- <section class="info-table">
+        <div class="tradingview-widget-container">
+            <div id="tradingview_b1c64"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget(
+            {
+            "width": 980,
+            "height": 610,
+            "symbol": "NASDAQ:TSLA",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_b1c64"
+          }
+            );
+            </script>
+          </div>
+    </section> -->
+    <footer>Footer</footer>
+</div>
 </body>
+
 </html>
+
