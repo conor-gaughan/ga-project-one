@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div class="container">
     <!-- <header>
         <nav>
             <div class="news">News</div>
@@ -25,14 +26,17 @@
     </header> -->
     <header>
         <form>
-            <i class="fas fa-search-dollar"></i>
             <input type="text" placeholder="Search Company">
             <button>
                 SEARCH
-                <i class="fas fa-search-dollar"></i>
+                <!-- <i class="fas fa-search-dollar"></i> -->
             </button>
-            <input type="submit" value="Search">
+            <!-- <input type="submit" value="Search"> -->
         </form>
+        <div class="dark-mode-toggler">
+            <input type="checkbox" id="toggler" aria-label="Toggler for dark mode">
+            <label for="toggler">Toggler</label>
+        </div>
     </header>
     <main>
         <section class="company-info">
@@ -58,63 +62,37 @@
         <section class="related-cards">
             <h3>Similar Companies</h3>
             <!-- GENERATING IN SCRIPT.JS -->
-            <div></div>
+            <div class="card-content"></div>
         </section>
     </main>
-    <section class="info-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Item Name</th>
-                    <th>Item Price</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Alvin</td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                </tr>
-                <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                </tr>
-                <tr>
-                    <td>Jonathan</td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <!-- <section class="info-table">
+        <div class="tradingview-widget-container">
+            <div id="tradingview_b1c64"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget(
+            {
+            "width": 980,
+            "height": 610,
+            "symbol": "NASDAQ:TSLA",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_b1c64"
+          }
+            );
+            </script>
+          </div>
+    </section> -->
     <footer>Footer</footer>
+</div>
 </body>
 
 </html>
 
-<!-- <div class="tradingview-widget-container">
-    <div id="tradingview_b1c64"></div>
-    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-    new TradingView.widget(
-    {
-    "width": 980,
-    "height": 610,
-    "symbol": "NASDAQ:TSLA",
-    "interval": "D",
-    "timezone": "Etc/UTC",
-    "theme": "light",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "allow_symbol_change": true,
-    "container_id": "tradingview_b1c64"
-  }
-    );
-    </script>
-  </div> -->

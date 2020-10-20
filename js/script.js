@@ -23,11 +23,25 @@ const industry = document.querySelector('.industry')
 const widget = document.querySelector('script[type="text/javascript"]')
 const cards = document.querySelector('.related-cards div')
 
+const card = document.querySelector('.card')
+const relatedCards = document.querySelector('.card-content')
+
+
 const current = document.querySelector('.current')
 const high = document.querySelector('.high')
 const low = document.querySelector('.low')
 const open = document.querySelector('.open')
 const previousClose = document.querySelector('.previous-close')
+
+// toggler
+
+const toggleEl = document.querySelector('.dark-mode-toggler')
+
+// grabbing related card
+
+
+
+
 
 
 
@@ -40,10 +54,30 @@ const pricing = document.querySelector('.pricing')
 
 formEl.addEventListener('submit', handleGetData)
 // formEl.addEventListener('submit', cardData)
+toggleEl.addEventListener('click', darkMode)
+
+relatedCards.addEventListener('click', cardClick)
+
+
+
 
 
 
 // FUNCTIONS
+
+function cardClick() {
+    console.log(this.textContent)
+}
+
+function darkMode() {
+    console.log('clicked')
+    let bodyEl = document.querySelector('body')
+    let mainEl = document.querySelector('main section')
+    console.log(mainEl)
+    let headerEl = document.querySelector('header')
+    bodyEl.classList.toggle('dark-mode')
+    headerEl.classList.toggle('dark-mode')
+}
 
 
 function handleGetData(e) {
@@ -60,8 +94,6 @@ function companyData() {
     .then((resp) => resp.json())
     .then(function(data) {
         companyInfo = data
-        // console.log('company info:', companyInfo)
-        // render()
         tableData()
     })
 }
@@ -72,11 +104,6 @@ function pricingData() {
     .then(function(data) {
         price = data
         console.log('PRICING', price)
-        
-        // for (const [key, value] of Object.entries(price)) {
-        //     console.log(`${key}: ${value}`);
-        //   }
-        // render()
     })
 
 }
@@ -86,8 +113,6 @@ function cardData() {
     .then((resp) => resp.json())
     .then(function(data) {
         peers = data
-        // console.log(data)
-        // render()
         })
 }
 
@@ -111,9 +136,6 @@ function generateUI() {
 }
 
 function generatePricing() {
-    // for (const [key, value] of Object.entries(price)) {
-    //     console.log(`${key}: ${value}`);
-    //   }
     let lookUp = {
             "c": 'Current Price:',
             "h": 'High:',
@@ -125,22 +147,15 @@ function generatePricing() {
     let innerUI = Object.entries(price)
     innerUI.pop()
     const html = innerUI.map(function(value) {
-        return `<p class="pricing-value">${lookUp[value[0]]} ${value[1]}</p>`
+        return `<p class="pricing-value">${lookUp[value[0]]} $${value[1]}</p>`
     })
     return `
     <section class="pricing-main">
+    <h3>Pricing Information</h2>
     ${html.join('')}
     </section>
     `
 }
-
-// function pricingRender() {
-//     current.textContent = `Current price: ${price.c.toFixed(2)}`
-//     high.textContent = `High: ${price.h.toFixed(2)}`
-//     low.textContent = `Low: ${price.l.toFixed(2)}`
-//     open.textContent = `Open: ${price.o.toFixed(2)}`
-//     previousClose.textContent = `Previous Close: ${price.pc.toFixed(2)}`
-// }
 
 
 function render() {
