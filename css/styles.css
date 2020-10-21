@@ -164,6 +164,7 @@ main {
     background-color: #32DE8A;
     border-radius: 15%;
     margin: 10px;
+    box-shadow: 15px 15px 5px #232C33;
     
     /* background-color: pink; */
     /* background-color: rgb(0,200,5); */
@@ -191,6 +192,8 @@ footer {
     border-top: 1px solid black;;
     bottom: 0;
     /* flex-grow: 1; */
+    position: absolute;
+    width: 100%;
 }
 
 footer a {

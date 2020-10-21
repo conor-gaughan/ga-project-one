@@ -27,21 +27,17 @@ const card = document.querySelector('.card')
 const relatedCards = document.querySelector('.card-content')
 
 
-const current = document.querySelector('.current')
-const high = document.querySelector('.high')
-const low = document.querySelector('.low')
-const open = document.querySelector('.open')
-const previousClose = document.querySelector('.previous-close')
+// const current = document.querySelector('.current')
+// const high = document.querySelector('.high')
+// const low = document.querySelector('.low')
+// const open = document.querySelector('.open')
+// const previousClose = document.querySelector('.previous-close')
 
 // toggler
 
 const toggleEl = document.querySelector('.dark-mode-toggler')
 
 // grabbing related card
-
-
-
-
 
 
 
@@ -54,31 +50,9 @@ const pricing = document.querySelector('.pricing')
 
 formEl.addEventListener('submit', handleGetData)
 // formEl.addEventListener('submit', cardData)
-toggleEl.addEventListener('click', darkMode)
-
-relatedCards.addEventListener('click', cardClick)
-
-
-
-
 
 
 // FUNCTIONS
-
-function cardClick() {
-    console.log(this.textContent)
-}
-
-function darkMode() {
-    console.log('clicked')
-    let bodyEl = document.querySelector('body')
-    let mainEl = document.querySelector('main section')
-    console.log(mainEl)
-    let headerEl = document.querySelector('header')
-    bodyEl.classList.toggle('dark-mode')
-    headerEl.classList.toggle('dark-mode')
-}
-
 
 function handleGetData(e) {
     e.preventDefault()
@@ -86,7 +60,6 @@ function handleGetData(e) {
     companyData()
     pricingData()
     cardData()
-
 }
 
 function companyData() {
@@ -168,18 +141,3 @@ function render() {
     cards.innerHTML = generateUI().join('');
     pricing.innerHTML = generatePricing();
 }
-
-
-
-
-
-
-// Have the entire table in a map function to display on page. do in index html first and style
-/*
-Things to potentially add:
-Navigation bar to include news and other links
-- Peers - similar stocks to the company
-- Pricing in Table 
-- See if there's a way to add a widget https://finnhub.io/docs/api#crypto-candles
-- Light mode and dark mode
-*/
