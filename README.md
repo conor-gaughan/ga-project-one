@@ -1,4 +1,4 @@
-# Stock App
+<div align="center"><h1>💰Stock Up💰</h1></div>
 
 The purpose of this app is to give users basic stock data, company info, and related companies based on their search.
 
@@ -6,7 +6,7 @@ The purpose of this app is to give users basic stock data, company info, and rel
 
 - HTML5
 - CSS3
-  - Font Awesome Icons CDN
+  - Font Awesome Icons
 - JavaScript
 
 ### Getting Started
