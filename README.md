@@ -1,6 +1,6 @@
 <div align="center"><h1>💰Stock Up💰</h1></div>
 
-The purpose of this app is to give users basic stock data, company info, and related companies based on their search.
+The purpose of this website is to give users basic stock data, company info, and related companies based on their search.
 
 ### Technologies Used
 
@@ -13,7 +13,7 @@ The purpose of this app is to give users basic stock data, company info, and rel
 
 [Deployed Website](https://priceless-jang-fde219.netlify.app/)
 
-- To use website, you have to search by `stock ticker` - not company
+- To use this website, you have to search by `stock ticker` - **not company**
 
 ### Wireframe
 
@@ -47,13 +47,13 @@ The purpose of this app is to give users basic stock data, company info, and rel
   - Functions
 
 - scroll events
-- Lookup functions: The object that was provided from the API didn't get me descriptive enough keys for end users to understand. Therefore, I needed to use a lookup function, `Object.entries()`, and `.map()` to provide the right informatiot.
+- Lookup functions: The object that was provided from the API didn't get me descriptive enough keys for end-users to understand. Therefore, I needed to use a lookup function, `Object.entries()`, and `.map()` to provide the right information.
 
 ### Functions
 
 Problem I encountered:
 
-- My generate UI function was not getting data to appear on screen, however it was console logging the data
+- My generate UI function was not out putting html
 
 Solution:
 
