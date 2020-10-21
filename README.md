@@ -21,18 +21,21 @@ The purpose of this app is to give users basic stock data, company info, and rel
 
 ### Website Images
 
-Homepage
+**Homepage**
+
 ![homepage](https://i.imgur.com/btnzRJW.png)
 
-Homepage with a search
+**Homepage with a search**
+
 ![searchresults](https://i.imgur.com/bOQADVt.png)
 
-Chart widget and footer
+**Chart widget and footer**
+
 ![chart](https://i.imgur.com/PSIKvUg.png)
 
 ## Takeaways 🧠
 
-- To get data on the form element, you don't have to grab the individual text - but you can grab the entire form
+- To get data on the form element, you don't have to grab the individual text - but you can grab the entire form element
 - text input type can use placeholders
 - submit input type, can change button text with value
 - usage of `constants` - declaring without assigning to use with things like the API call. Then you can use that as the first part of your object chaining
@@ -44,9 +47,7 @@ Chart widget and footer
   - Functions
 
 - scroll events
-- Lookup functions: When looping over an object with `Object.entries()` I needed to dynamically update the HTML with that information. Once you use `Object.entries()` you can then use map since it turns it into an array.
-
-- ## `Lookup Functions`
+- Lookup functions: The object that was provided from the API didn't get me descriptive enough keys for end users to understand. Therefore, I needed to use a lookup function, `Object.entries()`, and `.map()` to provide the right informatiot.
 
 ### Functions
 
@@ -61,6 +62,7 @@ Solution:
 ### Future Enhancements
 
 - Dark Mode
+- CSS Variables
 - Update Chat With Search
 - Modal or some click event on the cards
-- Additional Information
+- Additional Data

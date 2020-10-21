@@ -3,17 +3,12 @@
 const API_KEY = 'bu3p71v48v6up0bi1v20'
 const BASE_URL = 'https://finnhub.io/api/v1/'
 
-// Price Data https://finnhub.io/api/v1/quote?symbol=AAPL&token=bu3p71v48v6up0bi1v20
-
 let companyInfo, userInput, peers, table, price;
 
 
 // CACHED ELEMENT REFERENCES
 const input = document.querySelector('input[type="text"]')
 const formEl = document.querySelector('form')
-
-// COMPANY INFO
-
 const title = document.querySelector('.name')
 const ticker = document.querySelector('.ticker')
 const exchange = document.querySelector('.exchange')
@@ -22,33 +17,18 @@ const image = document.querySelector('.logo')
 const industry = document.querySelector('.industry')
 const widget = document.querySelector('script[type="text/javascript"]')
 const cards = document.querySelector('.related-cards div')
-
 const card = document.querySelector('.card')
 const relatedCards = document.querySelector('.tradingview-widget-copyright')
+const pricing = document.querySelector('.pricing')
 
 // TABLE
 
 const scrollTop = document.getElementById('top')
-console.log(scrollTop)
-
-// const current = document.querySelector('.current')
-// const high = document.querySelector('.high')
-// const low = document.querySelector('.low')
-// const open = document.querySelector('.open')
-// const previousClose = document.querySelector('.previous-close')
-
-// toggler
-
-const tableEl = document.getElementById('table')
-console.log(tableEl.scrollTop)
-
-// grabbing related card
 
 
 
-// pricing
 
-const pricing = document.querySelector('.pricing')
+
 
 
 // EVENT LISTENERS
@@ -59,17 +39,6 @@ scrollTop.addEventListener('click', backToTop)
 
 window.onscroll = function() {scrolling()}
 
-function scrolling() {
-    if (document.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollTop.style.display = "block";
-    } else {
-        scrollTop.style.display = "none"
-    }
-}
-
-function backToTop() {
-    document.documentElement.scrollTop = 0;
-}
 
 // FUNCTIONS
 
@@ -96,7 +65,6 @@ function pricingData() {
         .then((resp) => resp.json())
         .then(function (data) {
             price = data
-            console.log('PRICING', price)
         })
 
 }
@@ -115,7 +83,6 @@ function tableData() {
         .then(function (data) {
             table = data
             render()
-            console.log('TABLE DATA', table)
         })
 }
 
@@ -148,6 +115,18 @@ function generatePricing() {
     ${html.join('')}
     </section>
     `
+}
+
+function scrolling() {
+    if (document.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTop.style.display = "block";
+    } else {
+        scrollTop.style.display = "none"
+    }
+}
+
+function backToTop() {
+    document.documentElement.scrollTop = 0;
 }
 
 
