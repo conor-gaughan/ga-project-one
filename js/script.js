@@ -24,8 +24,12 @@ const widget = document.querySelector('script[type="text/javascript"]')
 const cards = document.querySelector('.related-cards div')
 
 const card = document.querySelector('.card')
-const relatedCards = document.querySelector('.card-content')
+const relatedCards = document.querySelector('.tradingview-widget-copyright')
 
+// TABLE
+
+const scrollTop = document.getElementById('top')
+console.log(scrollTop)
 
 // const current = document.querySelector('.current')
 // const high = document.querySelector('.high')
@@ -35,7 +39,8 @@ const relatedCards = document.querySelector('.card-content')
 
 // toggler
 
-const toggleEl = document.querySelector('.dark-mode-toggler')
+const tableEl = document.getElementById('table')
+console.log(tableEl.scrollTop)
 
 // grabbing related card
 
@@ -49,14 +54,29 @@ const pricing = document.querySelector('.pricing')
 // EVENT LISTENERS
 
 formEl.addEventListener('submit', handleGetData)
-// formEl.addEventListener('submit', cardData)
 
+scrollTop.addEventListener('click', backToTop)
+
+window.onscroll = function() {scrolling()}
+
+function scrolling() {
+    if (document.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTop.style.display = "block";
+    } else {
+        scrollTop.style.display = "none"
+    }
+}
+
+function backToTop() {
+    document.documentElement.scrollTop = 0;
+}
 
 // FUNCTIONS
 
 function handleGetData(e) {
     e.preventDefault()
     userInput = input.value
+
     companyData()
     pricingData()
     cardData()
@@ -64,43 +84,43 @@ function handleGetData(e) {
 
 function companyData() {
     fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${userInput}&token=bu3p71v48v6up0bi1v20`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        companyInfo = data
-        tableData()
-    })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            companyInfo = data
+            tableData()
+        })
 }
 
 function pricingData() {
     fetch(`https://finnhub.io/api/v1/quote?symbol=${userInput}&token=bu3p71v48v6up0bi1v20`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        price = data
-        console.log('PRICING', price)
-    })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            price = data
+            console.log('PRICING', price)
+        })
 
 }
 
 function cardData() {
     fetch(`https://finnhub.io/api/v1/stock/peers?symbol=${userInput}&token=bu3p71v48v6up0bi1v20`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        peers = data
+        .then((resp) => resp.json())
+        .then(function (data) {
+            peers = data
         })
 }
 
 function tableData() {
     fetch(`https://finnhub.io/api/v1/stock/metric?symbol=${userInput}&metric=all&token=bu3p71v48v6up0bi1v20`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        table = data
-        render()
-        console.log('TABLE DATA', table)
-    })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            table = data
+            render()
+            console.log('TABLE DATA', table)
+        })
 }
 
 function generateUI() {
-    return peers.map(function(company) {
+    return peers.map(function (company) {
         return `
         <article class="card">
         <p>${company}</p>
@@ -110,16 +130,16 @@ function generateUI() {
 
 function generatePricing() {
     let lookUp = {
-            "c": 'Current Price:',
-            "h": 'High:',
-            "l": 'Low:',
-            "o": 'Open:',
-            "pc": 'Previous Close: ',
-            "t": 'Timestamp: '
+        "c": 'Current Price:',
+        "h": 'High:',
+        "l": 'Low:',
+        "o": 'Open:',
+        "pc": 'Previous Close: ',
+        "t": 'Timestamp: '
     }
     let innerUI = Object.entries(price)
     innerUI.pop()
-    const html = innerUI.map(function(value) {
+    const html = innerUI.map(function (value) {
         return `<p class="pricing-value">${lookUp[value[0]]} $${value[1]}</p>`
     })
     return `

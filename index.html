@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Sansita+Swashed:wght@500&display=swap"
+        rel="stylesheet">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -17,86 +19,87 @@
 
 <body>
     <div class="container">
-    <!-- <header>
-        <nav>
-            <div class="news">News</div>
-            <div class="news">News</div>
-            <div class="news">News</div>
-        </nav>
-    </header> -->
-    <header>
-        <form>
-            <input type="text" placeholder="Search Stock Ticker">
-            <button>
-                SEARCH
-                <!-- <i class="fas fa-search-dollar"></i> -->
+        <header>
+            <div class="title">Stock App</div>
+        
+            <form>
+                <input type="text" placeholder="Search Stock Ticker">
+                <button>
+                    SEARCH
+                </button>
+            </form>
+            <nav>
+                
+                <a href="#table">Stock Chart!<i class="fas fa-chart-line fa-lg"></i></a>
+                
+            </nav>
+        </header>
+        <main>
+            <section class="company-info">
+                <h3>Company Info</h3>
+                <img src="" alt="" class="logo">
+                <p class="name"></p>
+                <p class="ticker"></p>
+                <p class="exchange"></p>
+                <a href="" target="_blank" class="company-url"></a>
+                <p class="industry"></p>
+            </section>
+
+            <section class="pricing">
+                <h3>Pricing Information</h3>
+                <p class="current"></p>
+                <p class="high"></p>
+                <p class="low"></p>
+                <p class="open"></p>
+                <p class="previous-close"></p>
+            </section>
+
+
+            <section class="related-cards">
+                <h3>Similar Companies</h3>
+                <!-- GENERATING IN SCRIPT.JS -->
+                <div class="card-content"></div>
+            </section>
+            <button id="top">
+                <i class="fas fa-arrow-up fa-2x"></i>
             </button>
-            <!-- <input type="submit" value="Search"> -->
-        </form>
-        <!-- <div class="dark-mode-toggler">
-            <input type="checkbox" id="toggler" aria-label="Toggler for dark mode">
-            <label for="toggler">Toggler</label>
-        </div> -->
-    </header>
-    <main>
-        <section class="company-info">
-            <h3>Company Info</h3>
-            <img src="" alt="" class="logo">
-            <p class="name"></p>
-            <p class="ticker"></p>
-            <p class="exchange"></p>
-            <a href="" target="_blank" class="company-url"></a>
-            <p class="industry"></p>
+        </main>
+
+        <section id="table" class="info-table">
+            <div class="tradingview-widget-container">
+                <div id="tradingview_b1c64"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget(
+                {
+                "width": 980,
+                "height": 610,
+                "symbol": "NASDAQ:TSLA",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "container_id": "tradingview_b1c64"
+              }
+                );
+                </script>
+              </div>
         </section>
 
-        <section class="pricing">
-            <h3>Pricing Information</h3>
-            <p class="current"></p>
-            <p class="high"></p>
-            <p class="low"></p>
-            <p class="open"></p>
-            <p class="previous-close"></p>
-        </section>
-
-
-        <section class="related-cards">
-            <h3>Similar Companies</h3>
-            <!-- GENERATING IN SCRIPT.JS -->
-            <div class="card-content"></div>
-        </section>
-    </main>
-    <!-- <section class="info-table">
-        <div class="tradingview-widget-container">
-            <div id="tradingview_b1c64"></div>
-            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-            new TradingView.widget(
-            {
-            "width": 980,
-            "height": 610,
-            "symbol": "NASDAQ:TSLA",
-            "interval": "D",
-            "timezone": "Etc/UTC",
-            "theme": "light",
-            "style": "1",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "allow_symbol_change": true,
-            "container_id": "tradingview_b1c64"
-          }
-            );
-            </script>
-          </div>
-    </section> -->
-    <footer>
-        <a href="https://github.com/conor-gaughan" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
-        <!-- <a href="/new">CONTACT</a> -->
-        <a href="https://www.linkedin.com/in/conorgaughan/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-    </footer>
-</div>
+        
+  
+        <footer>
+            <a href="https://github.com/conor-gaughan" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
+            <!-- <a href="/new">CONTACT</a> -->
+            <a href="https://www.linkedin.com/in/conorgaughan/" target="_blank"><i
+                    class="fab fa-linkedin fa-3x"></i></a>
+        </footer>
+    </div>
 </body>
 
 </html>
-
