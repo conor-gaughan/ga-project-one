@@ -61,6 +61,7 @@ Solution:
 
 ### Future Enhancements
 
+- Mobile Friendly
 - Dark Mode
 - CSS Variables
 - Update Chat With Search
